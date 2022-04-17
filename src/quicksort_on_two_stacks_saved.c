@@ -6,46 +6,39 @@
 /*   By: jnicolas <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 17:44:49 by jnicolas          #+#    #+#             */
-/*   Updated: 2022/04/12 22:28:38 by jnicolas         ###   ########.fr       */
+/*   Updated: 2022/04/16 21:20:19 by jnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 #include "stdio.h"
 
-int cpt = 0;
-void a_to_b(t_stack *stack_a, t_stack *stack_b, int len)
+void	a_to_b(t_stack *stack_a, t_stack *stack_b, int len)
 {
-	int middle;
-	int ra_count;
-	int pb_count;
-	int count;
+	int	middle;
+	int	ra_count;
+	int	pb_count;
+	int	count;
 
-	// printf("step a\n");
-	middle = mid(stack_a);
+	middle = mid(stack_a, len);
 	ra_count = 0;
 	pb_count = 0;
 	count = 0;
-
-	// printf("step b\n");
-	// printf("len : %d\n", len);
-	if (len == 1)
-		return;
+	if (len == 1 || len == 0)
+	{
+		return ;
+	}
 	if (len == 2)
 	{
-		//	printf("len=1");
 		sort_a_two(stack_a);
-		return;
+		return ;
 	}
-	// printf("step c\n");
 	while (count < len)
 	{
 		if (stack_a->top->data > middle)
 		{
-
 			rotate_stack(stack_a, 'a');
 			ra_count++;
-			printf("ra_count:%d\n", ra_count);
 		}
 		else
 		{
@@ -54,41 +47,36 @@ void a_to_b(t_stack *stack_a, t_stack *stack_b, int len)
 		}
 		count++;
 	}
-	// printf("step d\n");
 	count = 0;
 	while (count < ra_count)
 	{
 		reverse_rotate(stack_a, 'a');
 		count++;
 	}
-	// printf("step e\n");
-	// printf("step %d\n", cpt++);
 	a_to_b(stack_a, stack_b, ra_count);
-	printf("step f\n");
 	b_to_a(stack_b, stack_a, pb_count);
 }
 
-void b_to_a(t_stack *stack_b, t_stack *stack_a, int len)
+void	b_to_a(t_stack *stack_b, t_stack *stack_a, int len)
 {
-	int middle;
-	int rb_count;
-	int pa_count;
-	int count;
+	int	middle;
+	int	rb_count;
+	int	pa_count;
+	int	count;
 
-	middle = mid(stack_b);
+	middle = mid(stack_b, len);
 	rb_count = 0;
 	pa_count = 0;
 	count = 0;
-
-	if (len == 1)
+	if (len == 1 || len == 0)
 	{
 		push_stack(stack_b, stack_a, 'b');
-		return;
+		return ;
 	}
 	if (len == 2)
 	{
 		sort_b_two(stack_a, stack_b);
-		return;
+		return ;
 	}
 	while (count < len)
 	{

@@ -6,7 +6,7 @@
 /*   By: jnicolas <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 19:52:58 by jnicolas          #+#    #+#             */
-/*   Updated: 2022/04/12 22:25:55 by jnicolas         ###   ########.fr       */
+/*   Updated: 2022/04/16 20:32:18 by jnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ void	reverse_rotate(t_stack *stack, int flag);
 void	reverse_rotate_all_stack(t_stack *a, t_stack *b, int flag);
 int		ft_sort(t_stack *stack_a, t_stack *stack_b, int len);
 void	ft_sort_three_a(t_stack *stack);
-void	ft_sort_more_than_three(t_stack *stack_a, t_stack *stack_b);
+void	ft_naive_algo(t_stack *stack_a, t_stack *stack_b);
 int		check_list_b(t_stack *stack_b);
 int		check_list_a(t_stack *stack_a);
 void	sort_b(t_stack *stack_a, t_stack *stack_b);
-int		max(t_stack *stack);
-int		min(t_stack *stack);
-int		mid(t_stack *stack);
+int		max(t_stack *stack, int len);
+int		min(t_stack *stack, int len);
+int		mid(t_stack *stack, int len);
 void	a_to_b(t_stack *stack_a, t_stack *stack_b, int len);
 void	b_to_a(t_stack *stack_b, t_stack *stack_a, int len);
 void	sort_a_two(t_stack *stack_a);

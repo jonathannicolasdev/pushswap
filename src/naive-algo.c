@@ -6,7 +6,7 @@
 /*   By: jnicolas <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 18:19:56 by jnicolas          #+#    #+#             */
-/*   Updated: 2022/04/10 17:06:01 by jnicolas         ###   ########.fr       */
+/*   Updated: 2022/04/16 20:16:48 by jnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pushswap.h"
@@ -60,7 +60,7 @@ void	sort_b(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void	ft_sort_more_than_three(t_stack *stack_a, t_stack *stack_b)
+void	ft_naive_algo(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node	*temp;
 

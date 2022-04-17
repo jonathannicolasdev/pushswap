@@ -6,20 +6,20 @@
 /*   By: jnicolas <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 17:07:04 by jnicolas          #+#    #+#             */
-/*   Updated: 2022/04/10 17:45:40 by jnicolas         ###   ########.fr       */
+/*   Updated: 2022/04/16 21:10:08 by jnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "pushswap.h"
 #include "stdio.h"
 
-int	max(t_stack *stack)
+int	max(t_stack *stack, int len)
 {
 	t_node	*temp;
 	int		max;
 
 	temp = stack->top;
 	max = MININT;
-	while (temp != NULL)
+	while (temp != NULL && len--)
 	{
 		if (temp->data > max)
 			max = temp->data;
@@ -28,14 +28,14 @@ int	max(t_stack *stack)
 	return (max);
 }
 
-int	min(t_stack *stack)
+int	min(t_stack *stack, int len)
 {
 	t_node	*temp;
 	int		min;
 
 	temp = stack->top;
 	min = MAXINT;
-	while (temp != NULL)
+	while (temp != NULL && len--)
 	{
 		if (temp->data < min)
 			min = temp->data;
@@ -44,10 +44,10 @@ int	min(t_stack *stack)
 	return (min);
 }
 
-int	mid(t_stack *stack)
+int	mid(t_stack *stack, int len)
 {
 	int	mid;
 
-	mid = (min(stack) + max(stack) / 2);
+	mid = ((min(stack, len) + max(stack, len)) / 2);
 	return (mid);
 }

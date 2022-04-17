@@ -14,8 +14,8 @@ OBJDIR			= obj
 
 ### SOURCE FILES ###
 SRCS = main.c utils.c push.c swap.c rotate.c reverse_rotate.c \
-	   sortage.c ft_sort_more_than_three.c minmaxmid.c \
-	   ft_sort_more_than_three_v2.c sort_two.c
+	   choose-algo.c naive-algo.c \
+	   minmaxmid.c quicksort_on_two_stacks.c sort_two.c
 
 ### OBJECTS ###
 SRC	= $(addprefix $(SRCDIR)/,$(SRCS))
