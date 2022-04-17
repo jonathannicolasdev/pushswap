@@ -12,13 +12,13 @@
 
 #include "pushswap.h"
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-	t_node			*node;
-	int				i;
-	unsigned int	nb;
+	t_stack *stack_a;
+	t_stack *stack_b;
+	t_node *node;
+	int i;
+	unsigned int nb;
 
 	stack_a = stack_init();
 	stack_b = stack_init();
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 		insert_node_bottom(stack_a, node);
 	}
 	ft_sort(stack_a, stack_b, stack_a->len);
+	// show_stack(stack_a);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (1);
